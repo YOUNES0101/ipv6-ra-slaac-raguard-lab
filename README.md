@@ -5,7 +5,7 @@ Reproduction en laboratoire d'une attaque par faux *Router Advertisement* sur IP
 <sub>Module « Protocoles de sécurité et cryptanalyse » — EMSI</sub>
 
 <p align="center">
-  <img src="topology/topology.svg" alt="Topologie du laboratoire : R1 légitime, SW1 avec RA Guard, victime SLAAC et Kali en attaquant" width="660">
+  <img src="ipv6-ra-slaac-raguard-lab/topology/topology.svg" alt="Topologie du laboratoire : R1 légitime, SW1 avec RA Guard, victime SLAAC et Kali en attaquant" width="660">
 </p>
 
 ## Contexte
