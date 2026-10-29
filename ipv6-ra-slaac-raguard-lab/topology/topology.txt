@@ -1,0 +1,29 @@
+TOPOLOGIE DU TP IPv6 - RA, SLAAC & RA Guard
+===========================================
+
+            R1  (FE80::1  /  2001:DB8:10::1/64)
+                     |
+                     |  Gi0/0 de R1  <-->  Gi0/1 de SW1
+                     |
+                 +---+----+
+                 |  SW1   |   <-- RA Guard applique ici
+                 +--+--+--+
+          Gi0/2  |     |  Gi0/3
+                 |     |
+                 |     |
+             Victime   Kali  (FE80::66)
+         (SLAAC auto)  (faux RA via radvd)
+
+
+PLAN D'ADRESSAGE
+----------------
+R1   : FE80::1 (link-local) + 2001:DB8:10::1/64 (globale)
+Kali : FE80::66 (link-local)
+Victime : auto-configuree par SLAAC dans 2001:DB8:10::/64
+
+
+POLITIQUE RA GUARD SUR SW1
+--------------------------
+Gi0/1 (vers R1)      -> RA-ROUTER (device-role router)  -> RA autorises
+Gi0/2 (vers Victime) -> RA-HOST   (device-role host)    -> RA bloques
+Gi0/3 (vers Kali)    -> RA-HOST   (device-role host)    -> RA bloques

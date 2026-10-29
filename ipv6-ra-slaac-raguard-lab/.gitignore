@@ -1,0 +1,21 @@
+# Fichiers temporaires radvd
+*.pid
+
+# Captures Wireshark
+*.pcap
+*.pcapng
+
+# Projets et snapshots GNS3 (souvent trop lourds pour un repo)
+*.gns3project
+*.gns3
+project-files/
+
+# Images Cisco sous licence - NE PAS versionner
+*.bin
+*.image
+*.vmdk
+*.ova
+
+# Systeme
+.DS_Store
+Thumbs.db
